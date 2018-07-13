@@ -153,6 +153,10 @@ describe('algebra', function () {
     assert(n.lo < 1)
     assert(Math.abs(n.lo - 1) < 1e-7)
     assert(n.hi === Infinity)
+
+    // a^x
+    n = algebra.pow(2, new Interval(3, 4));
+    Interval.almostEqual(n, [8, 16]);
   })
 
   it('should compute the square root of an interval', function () {
